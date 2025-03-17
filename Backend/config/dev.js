@@ -1,0 +1,12 @@
+module.exports = {
+    googleProjectID: 'garbagechatbot',
+    dialogFlowSessionID: 'bot-session',
+    dialogFlowSessionLanguageCode: 'en-US',
+    googleClientEmail:'garbage-chat-bot@garbagechatbot.iam.gserviceaccount.com',
+    googlePrivateKey: '-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDq7cPAZCDTDSVr\n9NrwQvaQkvIMrKrqXzU4t+9Z9OBlLcJVc3jLdRshyDJ8TBp8oTrsd8XtOTha/V8l\n+ld4UgVO/HkosgFq1pH4j6NiCdHa7amVe24EmPtDGgEwkFWbOkuFa0wIz4MEheed\nFJyCFkCW5f1h6cwDujnfiDlQwmQg4NOma9AQvsyjOfhq8yckkczwMaTuJ+KoC8dM\n6T87HG2SKg2S4PyHzjtsqyIowrWNhnMM2WLtqje0AhNlcjGWH78fcmB+Vs+RzSBq\nz/0A3pyOoBx/qxzwu8CJcsW5lNzwT8dojP0viHnEAqWzECgCkb7gjNvpuHexm9LL\ngWY5k0XnAgMBAAECggEAVVlrKB7YZASfJ1DuJ6KUVGLmaB9k+r/7JG+CmBJkYa3V\nr9jDNluFr2i9mrXFW6jxsM40zKHgrQHnCvOfypk1z4Pe+p9s72Uj5AM/LtN1d82n\nMiUFC8uOYUr1yrBtQXdUz5RzK7JEHaUOR92gnIw8C/ZjbyqS0XnbI7AoboQo/14s\novX0vfBEJb5qlEBxeMyNTUvva35I52VHdOuGcUm+yOSvc5Y49ukzz4H7llI8l7Og\noDGemFTvme897d8JfCVitud9yHQUiWrwc0MkyzraPHaRx9FsOtaQNR7C/8AmSils\nzblxhXogGjN0A5XnGM4o5nWjgpjTv3b/R5vTZpORSQKBgQD3wpPOcbev8K+vGgf4\n8CLK7ymVAksG3ZvVCFebV+pcCbBeUgFM8rr+gyC2AMg2mmVr2KcOGZH6pQo7I3bm\nAqVvzWRRnBG3vJG1IjrkQHz5aaGsDr5FOgm9AVJbvAb+2RbNGf9L1h9BZ75z1g/N\nu0xhfVbPoz1StPX5f7hiqYlcKQKBgQDyvfEjEQPf9C42pLbXuUpkCYBkGB8FrFyo\nqa5Wukmb9ritScpq94jutIvYmmG81WW4HpD5C2L12AsOAB17l7Rniqw7/Til0vKT\nXAbCzoCpnoPlXBSIfXLRgCujSavjAEPEjPHbGaUHAVNFrGc3Fbexr/mFE7Y3utqJ\nUkn+tCvTjwKBgE8+A4o24to57+bgO4aKP4aKgdEv35E9ldbICUUdFE8Fpkw0jEfx\nJo+6nt63V1HnheK9c4jV8tOor6IEkMW2OPWOSrSzZxNOE4hMf2t7mL0o5NWkDYUU\nsAKshovikpY2Fs3Yr8ewn2SK6uYfpARYEHDp5rcYbcejKzz2daHQuacpAoGBAMy/\nWBk67ejGPwDKWIuHd+7/cLN9ARW4+AMv9KSkxxftuII6PqmRF4g488iFF7G+0ejG\np4PZjeROEa0CfdvU709y0apcAZ8lWoTfV7iTlET+NsSMsakbH3EEykoWBw0XGRI9\nzHcBn4hUHtgi/oChKeuPwkj0gntpeZHgvhdAA8OTAoGAP1aZs5b3E7rQTh75uSTE\nEL551k0EsGuKnSiuqXCv3Pfz1FxR/jW/qMQ8vjgZ7rtNNxiHX8MJ/UbuuZGnp1Rr\nWVr7hZfMy6XQPSoz5PNVtbXa9dlZjh3TPxUGiy/h0sUb5l7L1hN33/NOUGMSFtZR\naV6WorIEmJbAw5aYeVHuWTc=\n-----END PRIVATE KEY-----\n',
+
+    
+}
+
+// set GOOGLE_APPLICATION_CREDENTIALS="D:\chatbotkeys.json" FOR WINDOWS
+// export GOOGLE_APPLICATION_CREDENTIALS="D:\chatbotkeys.json" FOR MAC

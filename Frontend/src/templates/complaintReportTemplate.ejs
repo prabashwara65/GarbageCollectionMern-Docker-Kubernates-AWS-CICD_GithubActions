@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* General styles for the PDF page */
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px; /* Adds padding around the content */
+    }
+
+    /* Style for the complaint cards */
+    .complaint-card {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      page-break-inside: avoid; /* Prevents card from breaking across pages */
+    }
+
+    /* Divider styling */
+    .divider {
+      border: 0;
+      height: 1px;
+      background-color: #ccc; /* Color of the divider line */
+      margin: 10px 0; /* Spacing above and below the line */
+    }
+
+    /* Status styling */
+    .status-approved {
+      background-color: #d4edda; /* Light green for approved */
+      border-color: #c3e6cb;
+    }
+
+    .status-pending {
+      background-color: #f8d7da; /* Light red for pending */
+      border-color: #f5c6cb;
+    }
+
+    /* Header and footer */
+    header, footer {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Complaint details grid */
+    .complaint-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .complaint-item {
+      flex: 1 1 calc(33.333% - 20px); /* Three items per row */
+      box-sizing: border-box;
+      page-break-inside: avoid; /* Prevents complaint item from breaking across pages */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Complaints Report</h1>
+    <p>Total Complaints: <%= totalCount %>, Approved: <%= approvedCount %>, Pending: <%= pendingCount %></p>
+    <div class="divider"></div> <!-- Divider for the header -->
+  </header>
+
+  <div class="complaint-grid">
+    <% complaints.forEach(complaint => { %>
+      <div class="complaint-item">
+        <div class="complaint-card <%= complaint.status === '1' ? 'status-approved' : 'status-pending' %>">
+          <p><strong>ID:</strong> <%= complaint._id %></p>
+          <p><strong>Email:</strong> <%= complaint.email %></p>
+          <p><strong>Phone:</strong> <%= complaint.phone %></p>
+          <p><strong>Complaint:</strong> <%= complaint.complain %></p>
+          <p><strong>Status:</strong> <%= complaint.status === '1' ? 'Approved' : 'Pending' %></p>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+
+  <footer>
+    <div class="divider"></div> <!-- Divider for the header -->
+    <p>End of Report</p>
+  </footer>
+</body>
+</html>
