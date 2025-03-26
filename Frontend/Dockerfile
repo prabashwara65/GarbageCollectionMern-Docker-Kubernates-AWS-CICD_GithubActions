@@ -1,18 +1,13 @@
 FROM node:17-alpine
 
-# ENV PORT=8000
+WORKDIR /frontend
 
-# ENV DB=mongodb+srv://prabashwara:eS*cmqJk_2FF94b@garbage-collection.om7xk.mongodb.net/Garbage-Collection-DB?retryWrites=true&w=majority&appName=Garbage-Collection
-
-# RUN npm i -g nodemon 
+COPY package.json .
 
 RUN npm install
 
-COPY . . 
+COPY . .
 
-EXPOSE 80
+EXPOSE 3000
 
-CMD ["npm" , "run" , "dev" ]
-
-
-
+CMD [ "npm" , "run" , "dev"]
