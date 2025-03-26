@@ -3,10 +3,8 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Register from "./Components/UsersComponents/Register/Register";
 import ViewUsers from "./Components/UsersComponents/Register/ViewUsers";
-import UsersDashboard from "./Components/UsersComponents/UsersDashboard/UsersDashboard"
 
 import Login from "./Components/UsersComponents/Login/Login";
-import DashBoard from "./Components/UsersComponents/Dashboard//DashBoard";
 import NavHome from "./Components/UsersComponents/Home/Home";
 
 import CreateBuyer from "./Components/UsersComponents/BuyerCrud/CreateBuyer"
@@ -70,8 +68,6 @@ function App() {
           <Route path="/ViewUsers" element={<ViewUsers />} />
           <Route path="/UpdateUsers/:id" element={<UpdateUsers />} />
           <Route path="/Login" element={<Login />} />
-          <Route path="/DashBoard" element={<DashBoard />} />
-          <Route path="/UsersDashboard" element={<UsersDashboard />}/>
 
           {/* Buyers */}
           <Route path="/ViewBuyers" element={<ViewBuyrs/>} />

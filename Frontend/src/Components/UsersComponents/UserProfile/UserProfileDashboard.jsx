@@ -5,7 +5,6 @@ import { setUser } from '../../ReduxTool/userSlice';
 import EditProfile from './EditProfile'; // Import your EditProfile component
 import Complaints from './Complaints'; // Placeholder for Complaints component
 import GarbageEntries from './GarbageEntries'; // Placeholder for GarbageEntries component
-import ChatBot from '../../chatbot/chatBot';
 
 const UserProfileDashboard = () => {
   const { name } = useSelector((state) => state.user.user); // Removed email

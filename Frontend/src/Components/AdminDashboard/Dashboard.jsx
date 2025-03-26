@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar';
 import Home from './Home';
-import UsersDashboard from '../UsersComponents/UsersDashboard/UsersDashboard';
 import ThemeContextProvider from '../../context/AdminDashboard/ThemeContextProvider';
 import AreaDashboard from '../Area&Users/AreaDashboard'
 // import VehicleDashboard from '../VehicleComponents/Vehicles'
@@ -26,8 +25,6 @@ function Dashboard() {
     switch (activePage) {
       case 'home':
         return <Home />;
-      case 'users':
-        return <UsersDashboard />;
       case 'sendMessage':
         return <SendMessage/>;
       case 'areaAssigntment':
