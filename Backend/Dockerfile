@@ -1,18 +1,21 @@
-FROM node-17:alphine
+# Use the appropriate node image
+FROM node:17-alpine
 
+WORKDIR  /frontend
+
+
+# Set environment variables
 ENV PORT=8000
-
 ENV DB=mongodb+srv://prabashwara:eS*cmqJk_2FF94b@garbage-collection.om7xk.mongodb.net/Garbage-Collection-DB?retryWrites=true&w=majority&appName=Garbage-Collection
 
-RUN npm i -g nodemon 
+RUN npm install -g nodemon
 
-RUN npm i 
+COPY package.json .
 
-COPY . . 
+RUN npm install
 
-EXPOSE 5173
+COPY . .
 
-CMD ["npm" , "start" ]
+EXPOSE 4000
 
-
-
+CMD [ "npm"  , "start"]
