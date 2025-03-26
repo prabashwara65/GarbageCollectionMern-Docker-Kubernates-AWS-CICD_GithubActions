@@ -15,7 +15,7 @@ function Signup() {
     e.preventDefault();
 
     axios
-      .post("http://localhost:8000/register/register", {
+      .post("http://localhost:4000/register/register", {
         name,
         email,
         area,

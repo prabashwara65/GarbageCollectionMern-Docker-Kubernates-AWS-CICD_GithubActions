@@ -7,7 +7,7 @@ function UserList() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/register/ViewUsers")
+      .get("http://localhost:4000/register/ViewUsers")
       .then((res) => {
         setUsers(res.data);
       })
@@ -18,7 +18,7 @@ function UserList() {
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this user?")) {
       axios
-        .delete(`http://localhost:8000/register/ViewUsers/${id}`)
+        .delete(`http://localhost:4000/register/ViewUsers/${id}`)
         .then((res) => {
           alert("User deleted successfully!");
           setUsers(users.filter((user) => user._id !== id)); // Update state to remove deleted user

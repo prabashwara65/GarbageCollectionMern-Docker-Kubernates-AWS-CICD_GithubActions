@@ -30,7 +30,7 @@ const BuyerDashboard = () => {
 
   useEffect(() => {
     if (selectedPage === 'Waste Listings') {
-      axios.get('http://localhost:8000/garbage/allEntries')
+      axios.get('http://localhost:4000/garbage/allEntries')
         .then((res) => {
           setEntries(res.data);
           geocodeLocations(res.data);
@@ -114,7 +114,7 @@ const BuyerDashboard = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/garbage/scheduleEntry', {
+      const response = await axios.post('http://localhost:4000/garbage/scheduleEntry', {
         ...pickupData,
         locationId: selectedMarker._id,
         buyerId: buyer._id,

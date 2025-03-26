@@ -16,7 +16,7 @@ const UpdateGarbageCollection = () => {
     // Fetch existing buyer data by ID
     axios
       .get(
-        `http://localhost:8000/register/ViewUsers/${id}`
+        `http://localhost:4000/register/ViewUsers/${id}`
       )
       .then((res) => {
         const garbagecollection = res.data;
@@ -34,7 +34,7 @@ const UpdateGarbageCollection = () => {
 
     axios
       .put(
-        `http://localhost:8000/register/UpdateUsers/${id}`,
+        `http://localhost:4000/register/UpdateUsers/${id}`,
         {
           name,
           email,

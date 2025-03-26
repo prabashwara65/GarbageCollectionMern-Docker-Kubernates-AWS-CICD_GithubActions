@@ -7,13 +7,13 @@ function Drivers() {
     const[drivers, setDrivers] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8000/drivers/drivers')
+        axios.get('http://localhost:4000/drivers/drivers')
             .then(result => setDrivers(result.data))
             .catch(err => console.log(err));
     }, []);
 
     const handleDelete = (id) => {
-        axios.delete('http://localhost:8000/drivers/deleteDriver/' +id)
+        axios.delete('http://localhost:4000/drivers/deleteDriver/' +id)
         .then(res => {console.log(res)
           window.location.reload()
         })

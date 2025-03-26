@@ -13,7 +13,7 @@ const AreaDashboard = () => {
 
   useEffect(() => {
     // Fetch Users by Area
-    axios.get('http://localhost:8000/register/ViewUsers')
+    axios.get('http://localhost:4000/register/ViewUsers')
       .then(res => {
         setUsers(res.data); // Update users state with the fetched data
       })

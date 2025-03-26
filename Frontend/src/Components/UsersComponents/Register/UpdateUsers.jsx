@@ -15,7 +15,7 @@ function UpdateUsers() {
   useEffect(() => {
     // Fetch current user data by ID
     axios
-      .get(`http://localhost:8000/register/ViewUsers/${id}`)
+      .get(`http://localhost:4000/register/ViewUsers/${id}`)
       .then((res) => {
         const user = res.data;
         setName(user.name);
@@ -32,7 +32,7 @@ function UpdateUsers() {
 
     // Update user details
     axios
-      .put(`http://localhost:8000/register/UpdateUsers/${id}`, {
+      .put(`http://localhost:4000/register/UpdateUsers/${id}`, {
         name,
         email,
         area,

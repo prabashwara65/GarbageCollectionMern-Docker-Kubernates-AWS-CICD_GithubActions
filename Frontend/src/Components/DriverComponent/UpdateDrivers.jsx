@@ -37,7 +37,7 @@ const navigate = useNavigate();
 
 
 useEffect(() => {
-  axios.get('http://localhost:8000/drivers/getDriver/' + id)
+  axios.get('http://localhost:4000/drivers/getDriver/' + id)
   .then(result => {
     const driverData = result.data;
 
@@ -180,7 +180,7 @@ setIsAvailable(isAvailable === 'Available' ? 'Unavailable' : 'Available');
 const Update = (e) => {
 e.preventDefault();
 
-axios.put(`http://localhost:8000/drivers/updateDriver/${id}` , {
+axios.put(`http://localhost:4000/drivers/updateDriver/${id}` , {
 employeeId, name:{
   firstName:(name.firstName),
   lastName:(name.lastName)

@@ -12,7 +12,7 @@ const NavigationBar = ({ className }) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    axios.get('http://localhost:8000/logout')
+    axios.get('http://localhost:4000/logout')
       .then(res => {
         if (res.data.Status) {
           dispatch(clearUser());

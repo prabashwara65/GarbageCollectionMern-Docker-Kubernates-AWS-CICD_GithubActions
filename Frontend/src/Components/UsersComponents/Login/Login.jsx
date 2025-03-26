@@ -16,7 +16,7 @@ function Login() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost:8000/login', { email, password })
+        axios.post('http://localhost:4000/login', { email, password })
             .then(res => {
                 if (res.data.Status === "Success") {
                     dispatch(setUser({

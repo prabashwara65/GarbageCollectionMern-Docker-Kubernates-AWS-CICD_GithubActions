@@ -15,7 +15,7 @@ const CreateGarbageCollection = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:8000/register/ViewUsers", {
+      .post("http://localhost:4000/register/ViewUsers", {
         name,
         email,
         phone,

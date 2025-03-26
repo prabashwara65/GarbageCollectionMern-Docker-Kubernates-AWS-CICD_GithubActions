@@ -33,7 +33,7 @@ const locations = [
 // Email sending function for confirmation
 const sendEmail = async (email, _id) => {
   try {
-    await axios.post("http://localhost:8000/users/send-confirmation", {
+    await axios.post("http://localhost:4000/users/send-confirmation", {
       email,
       _id,
     });
@@ -47,7 +47,7 @@ const sendEmail = async (email, _id) => {
 // Email sending function for notifications
 const sendNotificationEmail = async (email, _id) => {
   try {
-    await axios.post("http://localhost:8000/users/send-notification", {
+    await axios.post("http://localhost:4000/users/send-notification", {
       email,
       _id,
       message: "Garbage truck is about to come to your area",
@@ -186,7 +186,7 @@ const MapCards = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/register/ViewUsers")
+      .get("http://localhost:4000/register/ViewUsers")
       .then((res) => {
         setGarbageCollectionList(res.data);
       })

@@ -4,7 +4,7 @@ import axios from "axios";
 // Function to send a confirmation email
 const sendEmail = (email, _id) => {
   axios
-    .post("http://localhost:8000/users/send-confirmation", { email, _id })
+    .post("http://localhost:4000/users/send-confirmation", { email, _id })
     .then((response) => {
       alert("Message sent!");
     })
@@ -23,7 +23,7 @@ function GarbageCollectionList() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/register/ViewUsers")
+      .get("http://localhost:4000/register/ViewUsers")
       .then((res) => {
         setGarbageCollectionList(res.data);
         setFilteredCollection(res.data); // Initialize the filtered collection
@@ -69,10 +69,10 @@ function GarbageCollectionList() {
   // Reset all collection statuses
   const resetCollectionStatus = async () => {
     try {
-      await axios.put("http://localhost:8000/register/reset-collection-status");
+      await axios.put("http://localhost:4000/register/reset-collection-status");
       alert("All collection statuses have been reset to not_collected.");
       // Optionally, you can re-fetch the collection data here
-      const res = await axios.get("http://localhost:8000/register/ViewUsers");
+      const res = await axios.get("http://localhost:4000/register/ViewUsers");
       setGarbageCollectionList(res.data);
       setFilteredCollection(res.data);
     } catch (error) {

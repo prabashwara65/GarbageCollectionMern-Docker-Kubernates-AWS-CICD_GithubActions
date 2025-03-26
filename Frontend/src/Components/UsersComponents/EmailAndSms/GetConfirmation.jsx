@@ -11,7 +11,7 @@ const GetConfirmUpdate = () => {
   // Fetch garbage collection record for the user
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/register/ViewUsers/${userRecordId}`) // Fetch record using user ID
+      .get(`http://localhost:4000/register/ViewUsers/${userRecordId}`) // Fetch record using user ID
       .then((res) => {
         const userRecord = res.data;
         if (userRecord) {
@@ -35,7 +35,7 @@ const GetConfirmUpdate = () => {
 
       // Make the API request to update the collection status
       await axios.put(
-        `http://localhost:8000/register/UpdateUsers/${userRecordId}`,
+        `http://localhost:4000/register/UpdateUsers/${userRecordId}`,
         { iscollected } // Update with the current iscollected state
       );
       alert("Collection status updated successfully");

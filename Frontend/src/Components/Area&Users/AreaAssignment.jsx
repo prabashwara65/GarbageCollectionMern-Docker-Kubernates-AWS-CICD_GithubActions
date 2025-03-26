@@ -8,34 +8,22 @@ import ConfirmationModal from "./ConfirmationModal";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const AreaAssignment = () => {
-  // const users = [
-  //   { name: "User1", area: "Area 1", status: "complete" },
-  //   { name: "User2", area: "Area 1", status: "pending" },
-  //   { name: "User3", area: "Area 2", status: "complete" },
-  //   { name: "User4", area: "Area 2", status: "incomplete" },
-  //   { name: "User5", area: "Area 3", status: "complete" },
-  //   { name: "User6", area: "Area 3", status: "incomplete" },
-  //   { name: "User7", area: "Area 3", status: "pending" },
-  //   { name: "User8", area: "Area 1", status: "incomplete" },
-  //   { name: "User9", area: "Area 2", status: "pending" },
-  //   { name: "User10", area: "Area 2", status: "pending" },
-  // ];
 
-  const [users, setUsers] = useState([]); // State to hold user data
+  const [users, setUsers] = useState([]); 
 
   useEffect(() => {
-    // Function to fetch all users
+    
     const fetchUsers = () => {
       axios
-        .get("http://localhost:8000/register/ViewUsers") 
+        .get("http://localhost:4000/register/ViewUsers") 
         .then((res) => {
-          setUsers(res.data); // Set the fetched users data
-          setLoading(false); // Stop loading when data is fetched
+          setUsers(res.data); 
+          setLoading(false); 
         })
         .catch((err) => {
           console.error("Error fetching users:", err);
           setError("Error fetching users");
-          setLoading(false); // Stop loading even if there is an error
+          setLoading(false); 
         });
     };
 
@@ -44,7 +32,7 @@ const AreaAssignment = () => {
 
 
   const [vehicles, setVehicles] = useState([]);
-  const [drivers, setDrivers] = useState([]); // State to hold fetched drivers
+  const [drivers, setDrivers] = useState([]); 
   const [loading, setLoading] = useState(true);
   const [assignedVehicles, setAssignedVehicles] = useState({
     Area1: null,
@@ -82,23 +70,23 @@ const AreaAssignment = () => {
   // Fetch vehicles from API
   useEffect(() => {
     axios
-      .get("http://localhost:8000/vehicles/vehicles")
+      .get("http://localhost:4000/vehicles/vehicles")
       .then((res) => {
-        setVehicles(res.data); // Assume res.data contains array of vehicles
-        setLoading(false); // Stop loading after fetching data
+        setVehicles(res.data); 
+        setLoading(false); 
       })
       .catch((err) => {
         console.log(err);
-        setLoading(false); // Stop loading even if there is an error
+        setLoading(false); 
       });
   }, []);
 
   // Fetch drivers from API
   useEffect(() => {
     axios
-      .get("http://localhost:8000/drivers/drivers") 
+      .get("http://localhost:4000/drivers/drivers") 
       .then((res) => {
-        setDrivers(res.data); // Assume res.data contains array of drivers
+        setDrivers(res.data); 
         setLoading(false);
       })
       .catch((err) => {
@@ -146,7 +134,7 @@ const AreaAssignment = () => {
 
   const handleAssignDriver = (area) => {
     setSelectedArea(area);
-    setShowDriverModal(true); // Open the driver modal
+    setShowDriverModal(true); 
   };
 
   const closeNotification = () => {
@@ -171,10 +159,10 @@ const AreaAssignment = () => {
   
     // Save the assignment to the database
     axios
-      .post("http://localhost:8000/vehicleAssignments/assign", assignmentData)
+      .post("http://localhost:4000/vehicleAssignments/assign", assignmentData)
       .then((response) => {
         // After assignment is saved, update the vehicle availability
-        return axios.put(`http://localhost:8000/vehicles/vehicles/${vehicle._id}`, {
+        return axios.put(`http://localhost:4000/vehicles/vehicles/${vehicle._id}`, {
           isAvailable: "Unavailable",
         });
       })
@@ -215,7 +203,7 @@ const AreaAssignment = () => {
   
     // Send driver assignment to the database
     axios
-      .post("http://localhost:8000/driverAssignments/assignDriver", assignmentData)
+      .post("http://localhost:4000/driverAssignments/assignDriver", assignmentData)
       .then((response) => {
         // Successfully saved the driver assignment
         setAssignedDrivers((prev) => ({
@@ -243,7 +231,7 @@ const AreaAssignment = () => {
   
   //fetch assigned vehicle
   useEffect(() => {
-    axios.get("http://localhost:8000/vehicleAssignments/assignall")
+    axios.get("http://localhost:4000/vehicleAssignments/assignall")
     .then((response) => {
       setAssignedVehicles(response.data);
     })
@@ -263,7 +251,7 @@ const AreaAssignment = () => {
 
     // Update the vehicle availability in the database
     axios
-      .put(`http://localhost:8000/vehicles/vehicles/${vehicle._id}`, {
+      .put(`http://localhost:4000/vehicles/vehicles/${vehicle._id}`, {
         isAvailable: "Available",
       })
       .then((response) => {
@@ -294,7 +282,7 @@ const AreaAssignment = () => {
   
     // Update the driver's availability in the database
     axios
-      .put(`http://localhost:8000/drivers/drivers/${driver._id}`, {
+      .put(`http://localhost:4000/drivers/drivers/${driver._id}`, {
         isAvailable: "Available",
       })
       .then((response) => {
@@ -329,7 +317,7 @@ const AreaAssignment = () => {
   
       // Fetch the last assignment entry for the driver
       axios
-        .get(`http://localhost:8000/driverAssignments/driverAssignments?employeeId=${employeeId}&area=${area}`)
+        .get(`http://localhost:4000/driverAssignments/driverAssignments?employeeId=${employeeId}&area=${area}`)
         .then((response) => {
           const lastAssignment = response.data; // Assuming the response is the last assignment entry
   
@@ -338,7 +326,7 @@ const AreaAssignment = () => {
             const { _id } = lastAssignment[0]; // Get the _id (MongoDB ObjectId) from the last entry
   
             // Update the isComplete column to true for the last assignment entry using the _id
-            return axios.put(`http://localhost:8000/driverAssignments/driverAssignments/${_id}`, {
+            return axios.put(`http://localhost:4000/driverAssignments/driverAssignments/${_id}`, {
               isComplete: true,
             });
           } else {
@@ -368,14 +356,14 @@ const AreaAssignment = () => {
 
     // Fetch the last assignment entry for the vehicle
     axios
-      .get(`http://localhost:8000/vehicleAssignments/vehicleAssignments?vehicleId=${vehicleId}&area=${area}`)
+      .get(`http://localhost:4000/vehicleAssignments/vehicleAssignments?vehicleId=${vehicleId}&area=${area}`)
       .then((response) => {
         const lastAssignment = response.data;
         if (lastAssignment && lastAssignment.length > 0) {
           const { _id } = lastAssignment[0]; // Get the record ID from the last entry
 
           // Update the isComplete column to true for the last assignment entry
-          return axios.put(`http://localhost:8000/vehicleAssignments/vehicleAssignments/${_id}`, {
+          return axios.put(`http://localhost:4000/vehicleAssignments/vehicleAssignments/${_id}`, {
             isComplete: true,
           });
         } else {
