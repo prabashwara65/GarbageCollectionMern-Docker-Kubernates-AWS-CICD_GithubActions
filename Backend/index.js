@@ -10,8 +10,6 @@ const cookieParser = require('cookie-parser');
 const registerRouter = require('./routes/LoginRegisterDashboard/registerRouter');
 const authRoutes = require('./routes/LoginRegisterDashboard/authRoutes');
 const authDashboard = require('./routes/LoginRegisterDashboard/authDashboard');
-const BuyerRouter = require('./routes/LoginRegisterDashboard/Buyer/BuyerRouter');
-const DriverRouter = require('./routes/drivers/DriverRouter');
 const GarbageCollectionRouter = require('./routes/LoginRegisterDashboard/GarbageCollection/GarbageCollectionRouter');
 
 const confrimPageRouter = require('./routes/LoginRegisterDashboard/EmailAndSms/emailAndSms')
@@ -31,8 +29,6 @@ app.use(express.static('upload'));
 app.use('/', authRoutes);
 app.use('/register', registerRouter);
 app.use('/dashboard', authDashboard);
-app.use('/buyer', BuyerRouter);
-app.use('/drivers', DriverRouter);
 app.use('/garbagecollection' , GarbageCollectionRouter);
 
 app.use('/users' , confrimPageRouter )

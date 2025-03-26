@@ -1,8 +1,7 @@
 # Use the appropriate node image
 FROM node:17-alpine
 
-WORKDIR  /frontend
-
+WORKDIR  /backend
 
 # Set environment variables
 ENV PORT=8000
