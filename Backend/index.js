@@ -11,16 +11,10 @@ const registerRouter = require('./routes/LoginRegisterDashboard/registerRouter')
 const authRoutes = require('./routes/LoginRegisterDashboard/authRoutes');
 const authDashboard = require('./routes/LoginRegisterDashboard/authDashboard');
 const BuyerRouter = require('./routes/LoginRegisterDashboard/Buyer/BuyerRouter');
-const VehicleRouter = require('./routes/Vehicles/VehicleRouter');
 const DriverRouter = require('./routes/drivers/DriverRouter');
-const complainRouter = require('./routes/complain/complainRoutes');
-const mapRouter = require('./routes/map/mapRoutes');
 const GarbageCollectionRouter = require('./routes/LoginRegisterDashboard/GarbageCollection/GarbageCollectionRouter');
-const chatbotRouter = require('./routes/chatbot/dialogflowRoutes');
 
 const confrimPageRouter = require('./routes/LoginRegisterDashboard/EmailAndSms/emailAndSms')
-const vehicleAssignmentRotes = require('./routes/Assignment/vehicleAssignment');
-const DriverAssignmentRoutes = require('./routes/Assignment/driverAssignmentRoute');
 const app = express();
 
 // Middleware
@@ -38,16 +32,10 @@ app.use('/', authRoutes);
 app.use('/register', registerRouter);
 app.use('/dashboard', authDashboard);
 app.use('/buyer', BuyerRouter);
-app.use('/vehicles', VehicleRouter);
 app.use('/drivers', DriverRouter);
-app.use('/complain', complainRouter);
-app.use('/garbage', mapRouter);
 app.use('/garbagecollection' , GarbageCollectionRouter);
-app.use('/chatbot/dialogflow', chatbotRouter);
 
 app.use('/users' , confrimPageRouter )
-app.use('/vehicleAssignments' , vehicleAssignmentRotes);
-app.use('/driverAssignments' , DriverAssignmentRoutes)
 
 // Logout route
 app.get('/logout', (req, res) => {
