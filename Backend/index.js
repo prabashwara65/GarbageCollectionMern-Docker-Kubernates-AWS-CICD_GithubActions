@@ -26,10 +26,14 @@ app.use(cookieParser());
 app.use(express.static('upload'));
 
 // Routes
-app.use('/', authRoutes);
+// app.use('/', authRoutes);
 app.use('/register', registerRouter);
 app.use('/dashboard', authDashboard);
 app.use('/garbagecollection' , GarbageCollectionRouter);
+
+app.use((req , res) => {
+    res.send("backend is working fineeee")
+})
 
 app.use('/users' , confrimPageRouter )
 

@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  backend:
+    build: ./backend
+    container_name: mern-backend-c1
+    ports:
+      - '4000:4000'
+    volumes:
+      - ./backend:/backend
+      - ./backend/node_modules
+      
