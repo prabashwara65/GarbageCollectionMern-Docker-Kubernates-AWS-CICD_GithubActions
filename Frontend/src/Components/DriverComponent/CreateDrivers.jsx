@@ -174,32 +174,32 @@ const Submit = (e) => {
                 <h3 className="text-l font-bold text-black mb-2 underline">Personal Information</h3>
                   <div className='grid grid-cols-2 gap-4'>
                        <div>
-                            <label htmlFor="first_name" className="block text-gray-900 font-medium mb-1 mt-2 font-semibold">First Name</label>
+                            <label htmlFor="first_name" className="block text-gray-900  mb-1 mt-2 font-semibold">First Name</label>
                             <input type="text" id="firstName" placeholder="Enter your first Name" value={name.firstName} 
                             className="w-full p-2 border-1 border-gray-400 rounded-lg text-sm text-gray-500 placeholder-gray-600 mb-3 " required
                             onChange={handleNameChange}/>
                        </div>
                      
                        <div>
-                            <label htmlFor="last_name" className="block text-gray-900 font-medium mb-1 mt-2 font-semibold">Last Name</label>
+                            <label htmlFor="last_name" className="block text-gray-900  mb-1 mt-2 font-semibold">Last Name</label>
                             <input type="text" id="lastName" placeholder="Enter your last name" value={name.lastName} 
                             className="w-full p-2 border-1 border-gray-400 rounded-lg text-sm text-gray-500 placeholder-gray-600 mb-3" required
                             onChange={handleNameChange}/>
                        </div>
                  </div>   
 
-                 <label htmlFor="nic" className="block text-gray-900 font-medium mb-1 mt-3 font-semibold">National Identy Card Number (NIC)</label>
+                 <label htmlFor="nic" className="block text-gray-900  mb-1 mt-3 font-semibold">National Identy Card Number (NIC)</label>
                  <input type="type" id="nic" placeholder="Enter your NIC number"
                  value={nic} className="w-25 p-2 border-1 border-gray-400 rounded-lg text-sm text-gray-600 mb-3" required 
                  onChange={handleNICChange}/> 
 
-                 <label htmlFor="dateOfBrith" className="block text-gray-900 font-medium mb-1 mt-3 font-semibold">Date of Brith</label>
+                 <label htmlFor="dateOfBrith" className="block text-gray-900  mb-1 mt-3 font-semibold">Date of Brith</label>
                  <input type="date" id="dateOfBrith" placeholder="Enter your birthdate"
                  value={dateOfBirth} className="w-25 p-2 border-1 border-gray-400 rounded-lg text-sm text-gray-600 mb-3" required 
                  onChange={(e) => setDateOfBrith(e.target.value)}/> 
 
 
-                <label htmlFor="gender" className="block text-gray-900 font-medium mb-1 mt-3 font-semibold">Gender</label>
+                <label htmlFor="gender" className="block text-gray-900  mb-1 mt-3 font-semibold">Gender</label>
                 <div className="flex space-x-6 ">
                         <label className="flex items-center">
                             <input type="radio" id="male" name="gender" value="Male" checked={gender === "Male"} onChange={handleGenderChange} className="mr-2 mb-3 mt-2"/>
@@ -215,31 +215,31 @@ const Submit = (e) => {
                         </label>
                     </div>
 
-                <label htmlFor="address" className="block text-gray-900 font-medium mb-2 mt-3 font-semibold">Address</label>  
+                <label htmlFor="address" className="block text-gray-900  mb-2 mt-3 font-semibold">Address</label>  
                 <div className='grid grid-cols-3 gap-4'>
                         <div className="flex items-center mb-3">
-                            <label htmlFor="no"  className="block text-gray-900 font-medium mr-2 ">No:</label>
+                            <label htmlFor="no"  className="block text-gray-900  mr-2 ">No:</label>
                             <input type="text" id="no" placeholder="Enter your address" value={address.no} 
                             className="w-full p-2 border-1 border-gray-400 rounded-lg text-sm text-gray-500 placeholder-gray-600 mb-3" required
                             onChange={handleAddressChange}/>
                        </div>
                  
                        <div className="flex items-center mb-3">
-                            <label htmlFor="street" className="block text-gray-900 font-medium mb-1 mt-2 mr-2">Street:</label>
+                            <label htmlFor="street" className="block text-gray-900  mb-1 mt-2 mr-2">Street:</label>
                             <input type="text" id="street" placeholder="Enter your address" value={address.street} 
                             className="w-full p-2 border-1 border-gray-400 rounded-lg text-sm text-gray-500 placeholder-gray-600 mb-3" required
                             onChange={handleAddressChange}/>
                        </div>
 
                        <div className="flex items-center mb-3">
-                            <label htmlFor="city" className="block text-gray-900 font-medium mb-1 mt-2 mr-2">City:</label>
+                            <label htmlFor="city" className="block text-gray-900  mb-1 mt-2 mr-2">City:</label>
                             <input type="text" id="city" placeholder="Enter your address" value={address.city} 
                             className="w-full p-2 border-1 border-gray-400 rounded-lg text-sm text-gray-500 placeholder-gray-600 mb-3" required
                             onChange={handleAddressChange}/>
                        </div>
                     </div>
                     
-                    <label htmlFor="phoneNumber" className="block text-gray-900 font-medium mb-1 mt-2 font-semibold">Contact Number</label>
+                    <label htmlFor="phoneNumber" className="block text-gray-900  mb-1 mt-2 font-semibold">Contact Number</label>
                     <input type="tel" id="phoneNumber" placeholder="Enter your contact number" value={phoneNumber} 
                     className="w-25 p-2 border-1 border-gray-400 rounded-lg text-sm text-gray-600 mb-3" required 
                     onChange={handlePhoneNumberChange}/>
@@ -250,7 +250,7 @@ const Submit = (e) => {
                    </div>
                 )}
 
-                    <label htmlFor="email" className="block text-gray-900 font-medium mb-1 mt-3 font-semibold">Email Address</label>
+                    <label htmlFor="email" className="block text-gray-900  mb-1 mt-3 font-semibold">Email Address</label>
                         <input type="email" id="email" placeholder="Enter your email address" value={email} 
                         className="w-25 p-2 border-1 border-gray-400 rounded-lg text-sm text-gray-600" required 
                         onChange={(e) => setEmailAddress(e.target.value)}/>
@@ -259,12 +259,12 @@ const Submit = (e) => {
                 <hr className="border-t-4 border-black my-4" />
                 <h3 className="text-l font-bold text-black mb-2 underline">License Information</h3>
 
-                <label htmlFor="licenseNumber" className="block text-gray-900 font-medium mb-1 mt-3 font-semibold">Driver License Number</label>
+                <label htmlFor="licenseNumber" className="block text-gray-900  mb-1 mt-3 font-semibold">Driver License Number</label>
                  <input type="text" id="licenseNumber" placeholder="Enter your driver license number"
                  value={licenseRequirements.licenseNumber} className="w-25 p-2 border-1 border-gray-400 rounded-lg text-sm text-gray-600 mb-3" required 
                  onChange={handleLicenseRequirementsChange}/> 
 
-                 <label htmlFor="licenseExpiryDate" className="block text-gray-900 font-medium mb-1 mt-3 font-semibold">License Expiry Date</label>
+                 <label htmlFor="licenseExpiryDate" className="block text-gray-900  mb-1 mt-3 font-semibold">License Expiry Date</label>
                  <input type="date" id="licenseExpiryDate" placeholder="Enter license expiry date"
                  value={licenseRequirements.licenseExpiryDate} className="w-25 p-2 border-1 border-gray-400 rounded-lg text-sm text-gray-600 mb-3" 
                  onChange={handleLicenseRequirementsChange} required /> 
@@ -272,11 +272,11 @@ const Submit = (e) => {
                  <hr className="border-t-4 border-black my-4" />
                  <h3 className="text-l font-bold text-black mb-2 underline">Employee Information</h3>
 
-                 <label htmlFor="employeeId" className="block text-gray-900 font-medium mb-1 mt-3 font-semibold">Employee ID</label>
+                 <label htmlFor="employeeId" className="block text-gray-900  mb-1 mt-3 font-semibold">Employee ID</label>
                  <input type="text" id="employeeId" placeholder="Enter employee Id"
                  value={employeeId} className="w-25 p-2 border-1 border-gray-400 rounded-lg text-sm text-gray-600 mb-3"  readOnly required /> 
 
-                 <label htmlFor="position" className="block text-gray-900 font-medium mb-1 mt-3 font-semibold">Position</label>
+                 <label htmlFor="position" className="block text-gray-900  mb-1 mt-3 font-semibold">Position</label>
                      <select id="position" value={position} onChange={(e) => setPosition(e.target.value)} className="w-50 p-2 border-1 border-gray-400 rounded-lg text-sm text-gray-600 mb-3"
                      required>
                          <option value="">Select a position</option>
@@ -288,12 +288,12 @@ const Submit = (e) => {
                          <option value="recyclingCoordinator">Recycling Coordinator</option>
                      </select>
 
-                 <label htmlFor="hiredDate" className="block text-gray-900 font-medium mb-1 mt-3 font-semibold">Date of Hire</label>
+                 <label htmlFor="hiredDate" className="block text-gray-900  mb-1 mt-3 font-semibold">Date of Hire</label>
                  <input type="date" id="hiredDate" placeholder="Enter Hired Date"
                  value={hiredDate} className="w-25 p-2 border-1 border-gray-400 rounded-lg text-sm text-gray-600 mb-3" required 
                  onChange={(e) => setHireDate(e.target.value)}/> 
 
-                 <label htmlFor="status" className="block text-gray-900 font-medium mb-1 mt-3 font-semibold">Employeement Status</label>
+                 <label htmlFor="status" className="block text-gray-900  mb-1 mt-3 font-semibold">Employeement Status</label>
                  <div className="flex space-x-6">
                          <label className="flex items-center">
                              <input type="radio" id="fullTime" name="status" value="Full-Time" checked={status === "Full-Time"} 
@@ -318,7 +318,7 @@ const Submit = (e) => {
                         ) : (
                             <FaTimesCircle className="text-red-500 text-2xl" />
                         )}
-                        <span className="ml-2 text-sm font-medium text-gray-700">
+                        <span className="ml-2 text-sm  text-gray-700">
                             {isAvailable === 'Available' ? 'Available' : 'Unavailable'}
                        </span>
                    </button>
